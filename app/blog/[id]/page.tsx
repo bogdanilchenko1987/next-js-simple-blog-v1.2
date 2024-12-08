@@ -30,7 +30,7 @@ export default async function Post({ params }: Props) {
       <h1>{post.title}</h1>
       <p>{post.body}</p>
       <form action={deletePost.bind(null, id)}>
-        <input type="submit" value="delete post" />
+        <input type="submit" value="Delete post" />
       </form>
       <b>
         <Link href={`/blog/${post.id}/edit`}>Edit post</Link>

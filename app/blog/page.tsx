@@ -19,6 +19,7 @@ export default async function Blog() {
         Add new post
       </Link>
       <ol>
+ 
         {posts.map((post: any) => (
           <li key={post.id}>
             <i>
