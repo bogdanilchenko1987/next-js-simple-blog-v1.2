@@ -19,8 +19,7 @@ export default async function Blog() {
         Add new post
       </Link>
       <ol>
- 
-        {posts.map((post: any) => (
+        {posts.map((post: { id: string; title: string; body: string }) => (
           <li key={post.id}>
             <i>
               <Link href={`/blog/${post.id}`}>{post.title}</Link>
