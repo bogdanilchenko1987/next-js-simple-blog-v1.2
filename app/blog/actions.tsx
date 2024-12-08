@@ -18,8 +18,11 @@ export async function updatePost(data: FormData) {
 
   const post = await response.json();
 
-  revalidatePath(`/blog/${post.id}`);
-  redirect(`/blog/${post.id}`);
+  // revalidatePath(`/blog/${post.id}`);
+  // redirect(`/blog/${post.id}`);
+
+  revalidatePath("/blog");
+  redirect(`/blog/`);
 }
 
 export async function deletePost(id: string) {
