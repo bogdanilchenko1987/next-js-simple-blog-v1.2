@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   description: "My Next JS blog page",
 };
 
-export const revalidate = 10;
-
 export default async function Blog() {
   const posts = await getAllPosts();
 
