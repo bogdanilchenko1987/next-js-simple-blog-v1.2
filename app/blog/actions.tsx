@@ -8,7 +8,7 @@ const BASE_URL = "https://673dfa890118dbfe8609a017.mockapi.io";
 export async function updatePost(data: FormData) {
   const { title, body, id } = Object.fromEntries(data);
 
-  const response = await fetch(`${BASE_URL}/posts/${id}`, {
+  await fetch(`${BASE_URL}/posts/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
