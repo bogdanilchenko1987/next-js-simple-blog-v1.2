@@ -16,7 +16,7 @@ export async function updatePost(data: FormData) {
     body: JSON.stringify({ title, body }),
   });
 
-  const post = await response.json();
+  // const post = await response.json();
 
   // revalidatePath(`/blog/${post.id}`);
   // redirect(`/blog/${post.id}`);
