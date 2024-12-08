@@ -1,3 +1,4 @@
+import { getPostsById } from "@/services/getPosts";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 const BASE_URL = "https://673dfa890118dbfe8609a017.mockapi.io";
@@ -5,16 +6,6 @@ type Props = {
   params: Promise<{
     id: string;
   }>;
-};
-
-export const getPostById = async (id: string) => {
-  const response = await fetch(`${BASE_URL}/posts/${id}`, {
-    headers: { "Content-type": "application/json" },
-  });
-
-  if (!response.ok) throw new Error("Unable to fetch post.");
-
-  return response.json();
 };
 
 async function updatePost(data: FormData) {
@@ -41,7 +32,7 @@ export default async function Profile(props: Props) {
 
   const { id } = params;
 
-  const post = await getPostById(id);
+  const post = await getPostsById(id);
 
   return (
     <div>
